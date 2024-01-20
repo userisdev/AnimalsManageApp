@@ -32,14 +32,14 @@
             this.btnLoad = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.cTag = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cUrl = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.webBrowser = new System.Windows.Forms.WebBrowser();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
             this.tbTag = new System.Windows.Forms.TextBox();
             this.tbUrl = new System.Windows.Forms.TextBox();
-            this.cTag = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cUrl = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource)).BeginInit();
             this.SuspendLayout();
@@ -66,6 +66,8 @@
             // 
             // dataGridView
             // 
+            this.dataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.dataGridView.AutoGenerateColumns = false;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -83,8 +85,25 @@
             this.dataGridView.TabIndex = 2;
             this.dataGridView.SelectionChanged += new System.EventHandler(this.DataGridView_SelectionChanged);
             // 
+            // cTag
+            // 
+            this.cTag.DataPropertyName = "Tag";
+            this.cTag.HeaderText = "Tag";
+            this.cTag.Name = "cTag";
+            this.cTag.ReadOnly = true;
+            // 
+            // cUrl
+            // 
+            this.cUrl.DataPropertyName = "Url";
+            this.cUrl.HeaderText = "Url";
+            this.cUrl.Name = "cUrl";
+            this.cUrl.ReadOnly = true;
+            // 
             // webBrowser
             // 
+            this.webBrowser.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.webBrowser.Location = new System.Drawing.Point(336, 12);
             this.webBrowser.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser.Name = "webBrowser";
@@ -125,20 +144,6 @@
             this.tbUrl.Size = new System.Drawing.Size(212, 19);
             this.tbUrl.TabIndex = 7;
             // 
-            // cTag
-            // 
-            this.cTag.DataPropertyName = "Tag";
-            this.cTag.HeaderText = "Tag";
-            this.cTag.Name = "cTag";
-            this.cTag.ReadOnly = true;
-            // 
-            // cUrl
-            // 
-            this.cUrl.DataPropertyName = "Url";
-            this.cUrl.HeaderText = "Url";
-            this.cUrl.Name = "cUrl";
-            this.cUrl.ReadOnly = true;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -152,7 +157,6 @@
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnLoad);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "MainForm";
             this.Text = "AnimalsManageApp";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
